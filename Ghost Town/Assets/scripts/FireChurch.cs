@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class FireChurch : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Collider particle;
+    ParticleSystem m_System;
+    ParticleSystem.Particle[] m_Particles;
+
     void Start()
     {
-        
+        particle = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnTriggerEnter(Collider other)
     {
-        
+        if (particle.gameObject.tag == "Player")
+        {
+            gameObject.GetComponent<ParticleSystem>().Play();
+        }
     }
 }
