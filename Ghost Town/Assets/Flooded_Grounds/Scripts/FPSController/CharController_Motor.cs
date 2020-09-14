@@ -14,7 +14,6 @@ public class CharController_Motor : MonoBehaviour {
 	public bool webGLRightClickRotation = true;
 	float gravity = -9.8f;
 
-	public AudioClip footSteps;
 
 
 	void Start(){

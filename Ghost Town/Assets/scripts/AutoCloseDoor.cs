@@ -8,7 +8,7 @@ public class AutoCloseDoor : MonoBehaviour
     public float doorOpenAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
     public float closeSpeed = 8.0f; //Increasing this value will make the door open faster
 
-    public AudioSource doorAudio;
+    //public AudioSource doorAudio;
 
     bool close = false;
     bool enter = false;
@@ -21,7 +21,7 @@ public class AutoCloseDoor : MonoBehaviour
     {
         defaultRotationAngle = transform.localEulerAngles.y;
         currentRotationAngle = transform.localEulerAngles.y;
-        doorAudio = GetComponent<AudioSource>();
+        //doorAudio = GetComponent<AudioSource>();
     }
 
     // Main function

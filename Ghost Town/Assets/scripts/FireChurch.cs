@@ -14,7 +14,7 @@ public class FireChurch : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider particle)
     {
         if (particle.gameObject.tag == "Player")
         {
