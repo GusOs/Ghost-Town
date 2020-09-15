@@ -5,20 +5,34 @@ using UnityEngine;
 public class FireChurch : MonoBehaviour
 {
     private Collider particle;
-    ParticleSystem m_System;
-    ParticleSystem.Particle[] m_Particles;
+    private new ParticleSystem particleSystem;
+    private bool isPlaying = false;
+
+    public Sound Flames;
+    public Sound Ignition;
 
     void Start()
     {
         particle = GetComponent<Collider>();
+        particleSystem = GetComponent<ParticleSystem>();
+        particleSystem.Clear();
     }
 
 
-    public void OnTriggerEnter(Collider particle)
+    public void OnTriggerEnter(Collider other)
     {
-        if (particle.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !isPlaying)
         {
-            gameObject.GetComponent<ParticleSystem>().Play();
+                particleSystem.Play();
+                isPlaying = true;
+                AudioManager.Instance.PlaySound(Ignition);
+                PauseSound();
+                AudioManager.Instance.PlaySound(Flames);
         }
+    }
+
+    IEnumerator PauseSound()
+    {
+        yield return new WaitForSeconds(3);
     }
 }

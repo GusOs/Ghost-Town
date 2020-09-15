@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1609394631446484893}
   - component: {fileID: 1484348262772318219}
   - component: {fileID: 1484079783408640349}
+  - component: {fileID: 1905083450}
+  - component: {fileID: 1905083446}
   m_Layer: 0
   m_Name: smoke
   m_TagString: Untagged
@@ -4754,6 +4756,34 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &1905083450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610261370485712647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.868774, y: 1.5625614, z: 9.335514}
+  m_Center: {x: 3.669983, y: -0.023895264, z: -3.4384613}
+--- !u!114 &1905083446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610261370485712647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b3578e950ecb640a21af5d5dd880b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
+  Flames: {fileID: 11400000, guid: e0b96f1490be04a4bb003f85a448c9dd, type: 2}
+  Ignition: {fileID: 11400000, guid: c6c2f6eaf4ce3754cbc6a8334fc2a385, type: 2}
 --- !u!1 &1612051068525373393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4765,6 +4795,8 @@ GameObject:
   - component: {fileID: 1609028287901665297}
   - component: {fileID: 1484739503409348623}
   - component: {fileID: 1484064963283743607}
+  - component: {fileID: 534431917}
+  - component: {fileID: 534431916}
   m_Layer: 0
   m_Name: FireParticle
   m_TagString: Untagged
@@ -9508,6 +9540,34 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &534431917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612051068525373393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5321045, y: 3.7447293, z: 9.809227}
+  m_Center: {x: 3.5807495, y: 1.5926255, z: -3.211279}
+--- !u!114 &534431916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612051068525373393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b3578e950ecb640a21af5d5dd880b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
+  Flames: {fileID: 11400000, guid: e0b96f1490be04a4bb003f85a448c9dd, type: 2}
+  Ignition: {fileID: 11400000, guid: c6c2f6eaf4ce3754cbc6a8334fc2a385, type: 2}
 --- !u!1 &1612184357156836921
 GameObject:
   m_ObjectHideFlags: 0
@@ -9519,6 +9579,8 @@ GameObject:
   - component: {fileID: 1609102468314155641}
   - component: {fileID: 1484371780798302887}
   - component: {fileID: 1484115193562456279}
+  - component: {fileID: 1777905305}
+  - component: {fileID: 1777905309}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -14271,6 +14333,34 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &1777905305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612184357156836921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.56781, y: 0.35055566, z: 9.685757}
+  m_Center: {x: 3.6037903, y: -0.0010070801, z: -3.6127644}
+--- !u!114 &1777905309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612184357156836921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b3578e950ecb640a21af5d5dd880b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
+  Flames: {fileID: 11400000, guid: e0b96f1490be04a4bb003f85a448c9dd, type: 2}
+  Ignition: {fileID: 11400000, guid: c6c2f6eaf4ce3754cbc6a8334fc2a385, type: 2}
 --- !u!1 &1612217673689963591
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,10 @@ using UnityEngine;
 public class AutoCloseDoor : MonoBehaviour
 {
     // Smoothly open a door
-    public float doorOpenAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
+    public float doorCloseAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
     public float closeSpeed = 8.0f; //Increasing this value will make the door open faster
 
-    //public AudioSource doorAudio;
+    public Sound doorCloseAudio;
 
     bool close = false;
     bool enter = false;
@@ -21,7 +21,6 @@ public class AutoCloseDoor : MonoBehaviour
     {
         defaultRotationAngle = transform.localEulerAngles.y;
         currentRotationAngle = transform.localEulerAngles.y;
-        //doorAudio = GetComponent<AudioSource>();
     }
 
     // Main function
@@ -31,11 +30,11 @@ public class AutoCloseDoor : MonoBehaviour
         {
             openTime += Time.deltaTime * closeSpeed;
         }
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (close ? doorOpenAngle : 0), openTime), transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (close ? doorCloseAngle : 0), openTime), transform.localEulerAngles.z);
 
         if (enter)
         {
-            //doorAudio.Play();
+            AudioManager.Instance.PlaySound(doorCloseAudio);
             close = !close;
             currentRotationAngle = transform.localEulerAngles.y;
             openTime = 0;
