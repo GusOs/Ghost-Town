@@ -5,12 +5,12 @@ using UnityEngine;
 public class AutoCloseDoor : MonoBehaviour
 {
     // Smoothly open a door
-    public float doorCloseAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
-    public float closeSpeed = 8.0f; //Increasing this value will make the door open faster
+    public float doorOpenAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
+    public float openSpeed = 8.0f; //Increasing this value will make the door open faster
 
-    public Sound doorCloseAudio;
+    public Sound doorAudio;
 
-    bool close = false;
+    bool open = false;
     bool enter = false;
 
     float defaultRotationAngle;
@@ -28,14 +28,14 @@ public class AutoCloseDoor : MonoBehaviour
     {
         if (openTime < 1)
         {
-            openTime += Time.deltaTime * closeSpeed;
+            openTime += Time.deltaTime * openSpeed;
         }
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (close ? doorCloseAngle : 0), openTime), transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (open ? doorOpenAngle : 0), openTime), transform.localEulerAngles.z);
 
         if (enter)
         {
-            AudioManager.Instance.PlaySound(doorCloseAudio);
-            close = !close;
+            AudioManager.Instance.PlaySound(doorAudio);
+            open = !open;
             currentRotationAngle = transform.localEulerAngles.y;
             openTime = 0;
         }
@@ -48,6 +48,14 @@ public class AutoCloseDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             enter = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            enter = false;
         }
     }
 }

@@ -25,14 +25,7 @@ public class FireChurch : MonoBehaviour
         {
                 particleSystem.Play();
                 isPlaying = true;
-                AudioManager.Instance.PlaySound(Ignition);
-                PauseSound();
                 AudioManager.Instance.PlaySound(Flames);
         }
-    }
-
-    IEnumerator PauseSound()
-    {
-        yield return new WaitForSeconds(3);
     }
 }
