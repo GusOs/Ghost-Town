@@ -50,10 +50,10 @@ namespace SlimUI.ModernMenu{
 		public GameObject sensitivityYSlider;
 		public GameObject mouseSmoothSlider;
 
-		private float sliderValue = 0.0f;
+		private float sliderValue = 5.0f;
 		private float sliderValueXSensitivity = 0.0f;
 		private float sliderValueYSensitivity = 0.0f;
-		private float sliderValueSmoothing = 0.0f;
+		private float sliderValueSmoothing = 5.0f;
 		
 
 		public void  Start (){
