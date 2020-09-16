@@ -9,7 +9,6 @@ public class FireChurch : MonoBehaviour
     private bool isPlaying = false;
 
     public Sound Flames;
-    public Sound Ignition;
 
     void Start()
     {
@@ -18,7 +17,7 @@ public class FireChurch : MonoBehaviour
         particleSystem.Clear();
     }
 
-
+    //Si colisiona, activar las particulas y reproducir sonido
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && !isPlaying)
