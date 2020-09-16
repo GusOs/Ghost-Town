@@ -6,16 +6,16 @@ public class AutoCloseDoor : MonoBehaviour
 {
     // Smoothly open a door
     public float doorOpenAngle = 90.0f; //Set either positive or negative number to open the door inwards or outwards
-    public float openSpeed = 8.0f; //Increasing this value will make the door open faster
+    public float closeSpeed = 8.0f; //Increasing this value will make the door open faster
 
     public Sound doorAudio;
 
-    bool open = false;
+    bool close = false;
     bool enter = false;
 
     float defaultRotationAngle;
     float currentRotationAngle;
-    float openTime = 0;
+    float closeTime = 0;
 
     void Start()
     {
@@ -26,18 +26,18 @@ public class AutoCloseDoor : MonoBehaviour
     // Main function
     void Update()
     {
-        if (openTime < 1)
+        if (closeTime < 1)
         {
-            openTime += Time.deltaTime * openSpeed;
+            closeTime += Time.deltaTime * closeSpeed;
         }
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (open ? doorOpenAngle : 0), openTime), transform.localEulerAngles.z);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Mathf.LerpAngle(currentRotationAngle, defaultRotationAngle + (close ? doorOpenAngle : 0), closeTime), transform.localEulerAngles.z);
 
         if (enter)
         {
             AudioManager.Instance.PlaySound(doorAudio);
-            open = !open;
+            close = !close;
             currentRotationAngle = transform.localEulerAngles.y;
-            openTime = 0;
+            closeTime = 0;
         }
     }
 
