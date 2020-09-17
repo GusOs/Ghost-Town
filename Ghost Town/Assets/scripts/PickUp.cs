@@ -8,6 +8,8 @@ public class PickUp : MonoBehaviour
 
     private bool hasCollided = false;
 
+    public Sound catchItem;
+
     void Start()
     {
         jackCollision = GetComponent<Collider>();
@@ -26,6 +28,7 @@ public class PickUp : MonoBehaviour
     {
         if (keyCollision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
+            AudioManager.Instance.PlaySound(catchItem);
             this.gameObject.SetActive(false);
         }
     }
