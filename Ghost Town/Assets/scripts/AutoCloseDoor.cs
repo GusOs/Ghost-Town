@@ -13,6 +13,7 @@ public class AutoCloseDoor : MonoBehaviour
     bool close = false;
     bool enter = false;
 
+
     float defaultRotationAngle;
     float currentRotationAngle;
     float closeTime = 0;
@@ -35,7 +36,7 @@ public class AutoCloseDoor : MonoBehaviour
         if (enter)
         {
             AudioManager.Instance.PlaySound(doorAudio);
-            close = !close;
+            close = true;
             currentRotationAngle = transform.localEulerAngles.y;
             closeTime = 0;
         }
